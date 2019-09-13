@@ -13,15 +13,16 @@ function nowServing(x) {
   }
 }
 
+function currentLine(line){
+  if(!line.length) {
+    return "The line is currently empty.";
+  }
+  var lineNamesandNumbers = [];
+  
+  for(var i=0; i<line.length; i++) {
+    lineNamesandNumbers.push(i+1 + ". "+ line[i]);
+  }
+  console.log("The line is currently: " + lineNamesandNumbers)
+  return "The line is currently: " + lineNamesandNumbers.join(', ');
+}
 
-function currentLine(NewLine) {
-    var line = []
-    if (NewLine.length === 0) {
-      return "The line is currently empty."
-    } else {
-      for(var i = 0; i < NewLine.length; i++) {
-        line += (i + 1) + ". " + NewLine[i] + ", "
-      }
-      line = line.slice(0, line.length-2)
-      return "The line is currently: " + line
-    }
